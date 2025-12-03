@@ -6,44 +6,12 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Star, ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
-
-const products = [
-  {
-    name: "Organic Cotton Tee",
-    brand: "EcoThreads",
-    ecoScore: 5,
-    price: "$45",
-    image: "/organic-cotton-tshirt.png",
-    reviewer: "Corbin Hayes",
-  },
-  {
-    name: "Recycled Denim Jacket",
-    brand: "ReNew Fashion",
-    ecoScore: 4,
-    price: "$120",
-    image: "/denim-jacket-sustainable.jpg",
-    reviewer: "Juniper Moss",
-  },
-  {
-    name: "Hemp Blend Hoodie",
-    brand: "GreenWear Co",
-    ecoScore: 5,
-    price: "$85",
-    image: "/hemp-hoodie.jpg",
-    reviewer: "Orion Vance",
-  },
-  {
-    name: "Bamboo Lounge Pants",
-    brand: "Comfort Earth",
-    ecoScore: 4,
-    price: "$55",
-    image: "/bamboo-pants.jpg",
-    reviewer: "Petra Novak",
-  },
-]
+import { products as allProducts } from "@/lib/products-data"
 
 export function FeaturedReviews() {
   const [currentIndex, setCurrentIndex] = useState(0)
+
+  const products = allProducts.filter((p) => p.reviewer).slice(0, 4)
 
   const next = () => setCurrentIndex((prev) => (prev + 1) % products.length)
   const prev = () => setCurrentIndex((prev) => (prev - 1 + products.length) % products.length)
@@ -93,7 +61,6 @@ export function FeaturedReviews() {
                     </div>
 
                     <div className="flex items-center justify-between">
-                      
                       <Link href={`/review/${product.name.toLowerCase().replace(/\s+/g, "-")}`}>
                         <Button size="sm" variant="outline" className="glass-morph bg-transparent">
                           Read Review

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export function HeroSection() {
   const [count, setCount] = useState(12000)
@@ -35,17 +36,21 @@ export function HeroSection() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="group relative overflow-hidden">
-              <span className="relative z-10 flex items-center gap-2">
-                Explore Ethical Collections
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform" />
-            </Button>
+            <Link href="/reviews">
+              <Button size="lg" className="group relative overflow-hidden">
+                <span className="relative z-10 flex items-center gap-2">
+                  Explore Ethical Collections
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform" />
+              </Button>
+            </Link>
 
-            <Button size="lg" variant="outline" className="glass-morph bg-transparent">
-              Learn Our Mission
-            </Button>
+            <Link href="/about">
+              <Button size="lg" variant="outline" className="glass-morph bg-transparent">
+                Learn Our Mission
+              </Button>
+            </Link>
           </div>
         </div>
 

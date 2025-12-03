@@ -6,89 +6,7 @@ import { Slider } from "@/components/ui/slider"
 import { Label } from "@/components/ui/label"
 import { Card } from "@/components/ui/card"
 import { Sparkles, Leaf } from "lucide-react"
-
-const products = [
-  {
-    id: 1,
-    name: "Organic Cotton T-Shirt",
-    brand: "Patagonia",
-    price: 45,
-    style: 30, // casual = 0-50, formal = 50-100
-    ethicsScore: 95,
-    image: "/organic-cotton-tshirt.png",
-    category: "Tops",
-  },
-  {
-    id: 2,
-    name: "Recycled Wool Blazer",
-    brand: "Everlane",
-    price: 180,
-    style: 85,
-    ethicsScore: 88,
-    image: "/wool-blazer-sustainable.jpg",
-    category: "Outerwear",
-  },
-  {
-    id: 3,
-    name: "Hemp Canvas Sneakers",
-    brand: "Veja",
-    price: 120,
-    style: 40,
-    ethicsScore: 92,
-    image: "/hemp-sneakers-sustainable.jpg",
-    category: "Shoes",
-  },
-  {
-    id: 4,
-    name: "Linen Dress Shirt",
-    brand: "Reformation",
-    price: 98,
-    style: 75,
-    ethicsScore: 90,
-    image: "/linen-dress-shirt.jpg",
-    category: "Tops",
-  },
-  {
-    id: 5,
-    name: "Bamboo Casual Joggers",
-    brand: "Tentree",
-    price: 65,
-    style: 25,
-    ethicsScore: 85,
-    image: "/bamboo-joggers.jpg",
-    category: "Bottoms",
-  },
-  {
-    id: 6,
-    name: "Recycled Polyester Suit",
-    brand: "Everlane",
-    price: 450,
-    style: 95,
-    ethicsScore: 87,
-    image: "/recycled-suit-formal.jpg",
-    category: "Suits",
-  },
-  {
-    id: 7,
-    name: "Organic Denim Jeans",
-    brand: "Nudie Jeans",
-    price: 140,
-    style: 45,
-    ethicsScore: 91,
-    image: "/organic-denim-jeans.jpg",
-    category: "Bottoms",
-  },
-  {
-    id: 8,
-    name: "Cork Sandals",
-    brand: "Birkenstock",
-    price: 85,
-    style: 20,
-    ethicsScore: 82,
-    image: "/cork-sandals.jpg",
-    category: "Shoes",
-  },
-]
+import { products } from "@/lib/products-data"
 
 export function ProductFinder() {
   const [style, setStyle] = useState([50])
@@ -151,14 +69,7 @@ export function ProductFinder() {
                 </div>
               </div>
 
-              <div>
-                <Label className="text-lg mb-4 block">Budget Range</Label>
-                <Slider value={budget} onValueChange={setBudget} max={500} step={10} />
-                <div className="flex justify-between text-sm text-foreground/60 mt-2">
-                  <span>$0</span>
-                  <span>${budget[0]}</span>
-                </div>
-              </div>
+              
 
               <Button size="lg" className="w-full group" onClick={handleFindMatch}>
                 <Sparkles className="w-5 h-5 mr-2" />

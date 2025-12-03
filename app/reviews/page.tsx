@@ -5,64 +5,10 @@ import { Star, CheckCircle2, TrendingUp, Award, ArrowRight } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { getBrands } from "@/lib/products-data"
 
 export default function ReviewsPage() {
-  const brandReviews = [
-    {
-      brand: "Patagonia",
-      slug: "patagonia",
-      rating: 9.5,
-      category: "Outdoor Wear",
-      ethicsScore: 95,
-      highlights: ["Fair Trade Certified", "1% for the Planet", "Repair Program", "Transparent Supply Chain"],
-      image: "/patagonia-outdoor-jacket-sustainable.jpg",
-    },
-    {
-      brand: "Everlane",
-      slug: "everlane",
-      rating: 8.7,
-      category: "Everyday Essentials",
-      ethicsScore: 87,
-      highlights: ["Radical Transparency", "Ethical Factories", "Carbon Neutral Shipping", "Recycled Materials"],
-      image: "/everlane-minimalist-clothing-sustainable.jpg",
-    },
-    {
-      brand: "Veja",
-      slug: "veja",
-      rating: 9.2,
-      category: "Footwear",
-      ethicsScore: 92,
-      highlights: ["Fair Trade", "Organic Cotton", "Wild Rubber", "No Advertising"],
-      image: "/veja-sustainable-sneakers.jpg",
-    },
-    {
-      brand: "Reformation",
-      slug: "reformation",
-      rating: 8.9,
-      category: "Women's Fashion",
-      ethicsScore: 89,
-      highlights: ["Climate Positive", "Deadstock Fabrics", "Water Conservation", "RefScale Tracking"],
-      image: "/reformation-sustainable-dress-fashion.jpg",
-    },
-    {
-      brand: "Allbirds",
-      slug: "allbirds",
-      rating: 8.5,
-      category: "Footwear",
-      ethicsScore: 85,
-      highlights: ["Carbon Footprint Labels", "Natural Materials", "B Corp Certified", "Renewable Energy"],
-      image: "/allbirds-wool-shoes-sustainable.jpg",
-    },
-    {
-      brand: "Tentree",
-      slug: "tentree",
-      rating: 9.0,
-      category: "Casual Wear",
-      ethicsScore: 90,
-      highlights: ["10 Trees per Item", "Sustainable Materials", "Climate+ Positive", "Transparent Impact"],
-      image: "/tentree-sustainable-casual-clothing-trees.jpg",
-    },
-  ]
+  const brandReviews = getBrands()
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
