@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     title: "EthicalWearHub - Shop for Tomorrow, Today",
     description: "Conscious consumption, curated for ethical fashion lovers",
     type: "website",
+    images: [
+      {
+        url: "/logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "EthicalWearHub Logo",
+      },
+    ],
   },
   icons: {
     icon: [
@@ -45,7 +53,7 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({
